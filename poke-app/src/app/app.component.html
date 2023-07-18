@@ -1,0 +1,33 @@
+<!-- Barra de navegación con fondo azul oscuro (bg-primary) -->
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <div class="container-fluid">
+    <!-- Logo de la aplicación con enlace al componente "home" -->
+    <a class="navbar-brand" routerLink="/home">Poke App</a>
+
+    <!-- Lista de enlaces de navegación alineados a la derecha (ml-auto) -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Enlace "Home" que redirige al componente "home" -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <!-- Enlace "Pokémon List" que redirige al componente "pokemon-list" -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pokemon-list">Pokémon List</a>
+      </li>
+      <!-- Enlace "About" que redirige al componente "about" -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <!-- Enlace "Logout" que redirige al componente "login" -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Contenedor principal para cargar componentes dinámicamente -->
+<div class="container mt-4">
+  <!-- El componente actualmente activo se cargará aquí -->
+  <router-outlet></router-outlet>
+</div>

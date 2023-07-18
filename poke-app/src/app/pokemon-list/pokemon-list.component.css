@@ -1,0 +1,50 @@
+/* Estilos para dispositivos grandes (pantallas de escritorio) */
+@media (min-width: 992px) {
+    .card {
+      margin: 0 15px 20px; /* Espacio entre las tarjetas en pantallas grandes */
+      border-radius: 10px; /* Agregar bordes redondeados a las tarjetas */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para las tarjetas */
+      transition: transform 0.2s ease-in-out; /* Transición suave al hacer hover */
+      background-color: #fff; /* Color de fondo de las tarjetas */
+      display: flex; /* Hacer que las tarjetas se alineen en una fila */
+      align-items: center; /* Centrar verticalmente el contenido de las tarjetas */
+      padding: 15px; /* Espaciado interno del cuerpo de las tarjetas */
+    }
+  
+    .card:hover {
+      transform: translateY(-8px); /* Efecto de levantamiento al hacer hover */
+    }
+  
+    .card img {
+      max-height: 200px; /* Ajustar el tamaño de la imagen en pantallas grandes */
+      width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
+      object-fit: cover; /* Ajustar la imagen para que cubra el contenedor */
+      border-radius: 50%; /* Hacer que la imagen sea redondeada */
+    }
+  
+    .card-body {
+      padding: 15px; /* Espaciado interno del cuerpo de la tarjeta */
+      flex: 1; /* Hacer que el cuerpo de la tarjeta ocupe todo el espacio disponible */
+    }
+  
+    .card-title {
+      font-size: 24px; /* Tamaño de fuente para el nombre del Pokémon en pantallas grandes */
+      font-weight: bold; /* Texto en negrita */
+      margin-bottom: 10px; /* Espacio inferior entre el nombre y el ID */
+    }
+  
+    .card-text {
+      font-size: 18px; /* Tamaño de fuente para el texto del ID en pantallas grandes */
+      color: #888; /* Color gris para el texto del ID */
+    }
+  
+    .btn-primary {
+      display: block; /* Convertir el botón en un bloque para ocupar todo el ancho */
+      margin-top: 20px; /* Espacio superior entre el texto del Pokémon y el botón */
+    }
+  
+    .container {
+      padding: 20px 0; /* Agregar espacio entre el encabezado y el contenido en pantallas grandes */
+    }
+  }
+  

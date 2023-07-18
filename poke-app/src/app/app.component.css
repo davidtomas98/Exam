@@ -1,0 +1,36 @@
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #3498db; /* Color de fondo */
+    padding: 1rem; /* Espaciado interno */
+  }
+  
+  /* Estilos para el texto del logo de la barra de navegación */
+  .navbar-brand {
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    font-weight: bold; /* Grosor de la fuente */
+  }
+  
+  /* Estilos para el contenido de la barra de navegación */
+  .navbar-nav {
+    align-items: center; /* Alinear los elementos verticalmente */
+  }
+  
+  /* Estilos para los enlaces de la barra de navegación */
+  .nav-link {
+    color: white; /* Color del texto */
+    font-size: 18px; /* Tamaño de la fuente */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    transition: background-color 0.2s ease; /* Transición del color de fondo */
+  }
+  
+  /* Estilos para los enlaces de la barra de navegación al pasar el cursor sobre ellos */
+  .nav-link:hover {
+    background-color: #2980b9; /* Color de fondo al pasar el cursor */
+  }
+  
+  /* Estilos para el contenedor principal de la aplicación */
+  .container {
+    margin-top: 2rem; /* Margen superior */
+  }
+  

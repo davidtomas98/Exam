@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 mt-4">
+        <h2 class="mb-4">List of Pokémon</h2>
+        <!-- Verificar si hay Pokémon en la lista y si la lista tiene elementos -->
+        <div *ngIf="pokemonList && pokemonList.length > 0; else loading">
+          <div class="row">
+            <!-- Mostrar cada Pokémon en una columna de tamaño medio (col-md-3 para pantallas pequeñas) y (col-md-2 para pantallas medianas y grandes) usando *ngFor -->
+            <div class="col-md-3 col-sm-6" *ngFor="let pokemon of pokemonList">
+              <div class="card mb-3 text-center shadow">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-12">
+                    <!-- Mostrar la imagen del Pokémon con la clase "img-fluid" para que sea responsive -->
+                    <img [src]="pokemon.imageUrl" class="img-fluid rounded-circle" alt="{{ pokemon.name }}">
+                  </div>
+                  <div class="col-md-12">
+                    <div class="card-body">
+                      <!-- Mostrar el nombre y el ID del Pokémon en la tarjeta -->
+                      <h5 class="card-title">{{ pokemon.name }}</h5>
+                      <p class="card-text">ID: {{ pokemon.id }}</p>
+                      <!-- Agregar un botón "View Details" con el evento click que llama a la función goToDetails -->
+                      <a (click)="goToDetails(pokemon.id)" class="btn btn-primary">View Details</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Plantilla para mostrar un spinner de carga mientras se obtienen los datos de los Pokémon -->
+        <ng-template #loading>
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  

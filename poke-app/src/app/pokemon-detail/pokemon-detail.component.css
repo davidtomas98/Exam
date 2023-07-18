@@ -1,0 +1,33 @@
+/* Estilos para el contenedor principal del detalle del Pokémon */
+.pokemon-detail-container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el nombre del Pokémon */
+  .pokemon-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para la imagen del Pokémon */
+  .pokemon-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para los detalles del Pokémon */
+  .pokemon-details {
+    font-size: 16px;
+  }
+  
+  /* Estilos para los detalles del Pokémon: etiquetas de texto en negrita */
+  .pokemon-details p strong {
+    font-weight: bold;
+  }
