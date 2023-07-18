@@ -8,7 +8,9 @@ import { PokemonService } from '../services/pokemon.service';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-  pokemonList: any[] = []; // Array para almacenar la lista de Pokémon
+  pokemonList: any[] = [];
+  filteredPokemonList: any[] = [];
+  searchTerm: string = '';
 
   constructor(
     private pokemonService: PokemonService,
@@ -16,21 +18,19 @@ export class PokemonListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getPokemonList(); // Al inicializar el componente, se obtiene la lista de Pokémon
+    this.getPokemonList();
   }
 
-  // Función para obtener la lista de Pokémon aleatorios desde el servicio
   getPokemonList() {
     this.pokemonService.getRandomPokemonList(8).subscribe(
       (data: any) => {
-        console.log(data); // Mostrar los datos obtenidos por consola
         if (Array.isArray(data.results)) {
-          // Mapear los datos obtenidos a un array de objetos con id, nombre e imagenUrl
           this.pokemonList = data.results.map((pokemon: any) => ({
             id: this.extractPokemonIdFromUrl(pokemon.url),
             name: pokemon.name,
             imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.extractPokemonIdFromUrl(pokemon.url)}.png`
           }));
+          this.filteredPokemonList = this.pokemonList;
         }
       },
       (error: any) => {
@@ -39,7 +39,6 @@ export class PokemonListComponent implements OnInit {
     );
   }
 
-  // Función para extraer el ID del Pokémon de la URL
   private extractPokemonIdFromUrl(url: string): number {
     const pattern = /\/(\d+)\/$/;
     const match = url.match(pattern);
@@ -49,7 +48,21 @@ export class PokemonListComponent implements OnInit {
     return 0;
   }
 
-  // Función para redirigir a la página de detalles de un Pokémon al hacer clic en "View Details"
+  searchPokemon() {
+    if (this.searchTerm.trim() === '') {
+      this.filteredPokemonList = this.pokemonList;
+    } else {
+      this.filteredPokemonList = this.pokemonList.filter(pokemon => 
+        pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+  }
+
+  clearSearch() {
+    this.searchTerm = '';
+    this.filteredPokemonList = this.pokemonList;
+  }
+
   goToDetails(pokemonId: number) {
     this.router.navigate(['/pokemon', pokemonId]);
   }
